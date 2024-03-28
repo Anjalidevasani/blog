@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background:skyblue;
+        }
+        .up{
+            height: 400px;
+            width:300px;
+            background-color: transparent;
+            border: 2px solid rgba(0, 0, 0, .1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            color:black;
+            border-radius:10px;
+            padding: 30px 40px;
+
+        }
+        .up h3{
+            font-size: 35px;
+            text-align: center;
+        }
+        .up .input-box{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin: 30px 0;
+        }
+        .input-box input{
+            width: 100%;
+            height: 5px;
+            background: white;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255,255, .2);
+            border-radius: 40px;
+            font-size: 16px;
+            color: black;
+            padding: 20px 45px 20px 20px;
+        }
+        .up .btn{
+            width: 100%;
+            height: 50px;
+            background-color:white;
+            margin: 5px;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            cursor: pointer;
+            font-size: 16px;
+            color: brown;
+            font-weight: 600;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="up">
+    <form method="POST">
+        <h3>EDIT</h3>
+        <div class="input-box">
+        <label for="">Title:</label>
+        <input name="title" type="text" value="{{post[1]}}">
+        <label for="">Content:</label><br>
+        <input name="content" type="text" value="{{post[2]}}"><br>
+        <label for="">Slug:</label>
+        <input name="slug" type="text" value="{{post[4]}}"><br>
+        <button type="submit" class="btn">Update Post</button>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Lucida Sans', Arial;
+            background-color:white;
+            color:black;
+            background-image: url("https://www.shutterstock.com/shutterstock/photos/2050037234/display_1500/stock-photo--d-render-abstract-minimal-neon-background-with-glowing-wavy-line-dark-wall-illuminated-with-led-2050037234.jpg");
+        }
+        .container{
+            max-width: 1000px;
+            padding: 0%;
+            margin: 0 auto ;
+
+        }
+        h1{
+            color:black;
+            text-align:center;
+            margin-bottom:10px;
+
+        }
+        h2{
+            color:blueviolet;
+            font-size:24px;
+            margin-bottom: 10px;
+            
+
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        small{
+            color:black;
+        }
+        .post{
+            opacity: .3;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CYBER SECURITY</h1>
+        {% for i in posts %}
+            <h2>{{i[1]}}</h2>
+            <p>{{i[2]}}</p>
+            <small>posted at:{{i[3]}}</small>
+            <form method="POST" action="{{url_for('delete_post',id=posts[0][0])}}" onsubmit="return confrim('Are you sure you want to delete this post?');">
+            <button>Delete</button>
+            </form>
+            <form method="GET" action="{{url_for('update_post',id=posts[0][0])}}">
+            <button>Edit</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>
